@@ -16,6 +16,11 @@ import {
   CREATE_RUN_ERROR,
   GET_RUNS_BEGIN,
   GET_RUNS_SUCCESS,
+  SET_EDIT_RUN,
+  DELETE_RUN_BEGIN,
+  EDIT_RUN_BEGIN,
+  EDIT_RUN_SUCCESS,
+  EDIT_RUN_ERROR,
 } from "./actions";
 import { initialState } from "./appContext";
 
@@ -152,6 +157,56 @@ const reducer = (state, action) => {
       numOfPages: action.payload.numOfPages,
     };
   }
+  /*************************************/
+
+  /************ DELETE & EDIT RUN *************/
+  if (action.type === DELETE_RUN_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+
+  if (action.type === SET_EDIT_RUN) {
+    const run = state.runs.find(run => run._id === action.payload.runId);
+    const { _id, runTime, runDistance, stepsTaken, runRating, runNotes } = run;
+    return {
+      ...state,
+      isEditing: true,
+      editRunId: _id,
+      runTime,
+      runDistance,
+      stepsTaken,
+      runRating,
+      runNotes,
+    };
+  }
+
+  if (action.type === EDIT_RUN_BEGIN) {
+    return {
+      ...state,
+      isLoading: false,
+    };
+  }
+  if (action.type === EDIT_RUN_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "success",
+      alertText: "Run Updated Successfully!",
+    };
+  }
+  if (action.type === EDIT_RUN_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "danger",
+      alertText: action.payload.msg,
+    };
+  }
+
   /*************************************/
 
   /************ MISC FUNCTIONALITIES *************/

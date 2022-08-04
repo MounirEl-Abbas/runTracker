@@ -17,6 +17,7 @@ const AddRun = () => {
     createRun,
     showAlert,
     isEditing,
+    editRun,
   } = useAppContext();
 
   const handleRunInput = e => {
@@ -31,7 +32,10 @@ const AddRun = () => {
       displayAlert();
       return;
     }
-    if (isEditing) return;
+    if (isEditing) {
+      editRun();
+      return;
+    }
 
     createRun();
   };

@@ -21,3 +21,11 @@ export const CREATE_RUN_ERROR = "CREATE_RUN_ERROR";
 
 export const GET_RUNS_BEGIN = "GET_RUNS_BEGIN";
 export const GET_RUNS_SUCCESS = "GET_RUNS_SUCCESS";
+
+export const SET_EDIT_RUN = "SET_EDIT_RUN";
+
+export const DELETE_RUN_BEGIN = "DELETE_RUN_BEGIN";
+
+export const EDIT_RUN_BEGIN = "EDIT_RUN_BEGIN";
+export const EDIT_RUN_SUCCESS = "EDIT_RUN_SUCCESS";
+export const EDIT_RUN_ERROR = "EDIT_RUN_ERROR";

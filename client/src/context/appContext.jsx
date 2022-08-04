@@ -19,6 +19,11 @@ import {
   CREATE_RUN_ERROR,
   GET_RUNS_BEGIN,
   GET_RUNS_SUCCESS,
+  SET_EDIT_RUN,
+  DELETE_RUN_BEGIN,
+  EDIT_RUN_BEGIN,
+  EDIT_RUN_SUCCESS,
+  EDIT_RUN_ERROR,
 } from "./actions";
 
 const token = localStorage.getItem("token");
@@ -39,7 +44,7 @@ export const initialState = {
   runRating: "adequate",
   runRatingOptions: ["superb", "adequate", "poor"],
   isEditing: false,
-  editJobId: "",
+  editRunId: "",
   runs: [],
   totalRuns: 0,
   numOfPages: 1,
@@ -213,11 +218,43 @@ const AppProvider = ({ children }) => {
     clearAlert();
   };
 
-  const setEditRun = id => {
-    console.log(`set edit Run ${id}`);
+  const setEditRun = runId => {
+    dispatch({ type: SET_EDIT_RUN, payload: { runId } });
   };
-  const deleteRun = id => {
-    console.log(`delete run ${id}`);
+
+  const editRun = async () => {
+    dispatch({ type: EDIT_RUN_BEGIN });
+
+    try {
+      const { runTime, runDistance, stepsTaken, runRating, runNotes } = state;
+      await authFetch.patch(`/runs/${state.editRunId}`, {
+        runTime,
+        runDistance,
+        stepsTaken,
+        runRating,
+        runNotes,
+      });
+      dispatch({ type: EDIT_RUN_SUCCESS });
+      dispatch({ type: CLEAR_VALUES });
+    } catch (error) {
+      if (error.response.status === 401) return;
+      dispatch({
+        type: EDIT_RUN_ERROR,
+        payload: { msg: error.response.data.msg },
+      });
+    }
+    clearAlert();
+  };
+
+  const deleteRun = async runId => {
+    dispatch({ type: DELETE_RUN_BEGIN });
+    try {
+      await authFetch.delete(`/runs/${runId}`);
+      getRuns();
+    } catch (error) {
+      console.log(error.response);
+      // logoutUser();
+    }
   };
 
   return (
@@ -234,6 +271,7 @@ const AppProvider = ({ children }) => {
         createRun,
         getRuns,
         setEditRun,
+        editRun,
         deleteRun,
       }}>
       {children}
