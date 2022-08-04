@@ -11,11 +11,6 @@ const RunSchema = new mongoose.Schema(
       type: Number,
       required: [true, "Please enter distance ran"],
     },
-    distanceUnit: {
-      type: String,
-      enum: ["km", "mile"],
-      default: "km",
-    },
     // runTime / runDistance = runPace
     runPace: {
       type: String,
@@ -24,12 +19,7 @@ const RunSchema = new mongoose.Schema(
     runSpeed: {
       type: String,
     },
-    steps: {
-      type: Number,
-      default: 0,
-      min: 0,
-    },
-    caloriesBurned: {
+    stepsTaken: {
       type: Number,
       default: 0,
       min: 0,
@@ -56,11 +46,10 @@ RunSchema.pre("save", async function () {
   //Calculate runPace and runSpeed, and take care of trailing 0s (e.g. 12.00 = 12)
   this.runPace =
     parseFloat((this.runTime / this.runDistance).toFixed(2)) +
-    ` minutes per ${this.distanceUnit}`;
+    ` minutes per km`;
 
   this.runSpeed =
-    parseFloat((this.runDistance / this.runTime).toFixed(2)) +
-    ` ${this.distanceUnit} per minute`;
+    parseFloat((this.runDistance / this.runTime).toFixed(2)) + ` km per minute`;
 });
 
 export default mongoose.model("Run", RunSchema);

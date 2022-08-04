@@ -9,6 +9,11 @@ import {
   UPDATE_USER_BEGIN,
   UPDATE_USER_SUCCESS,
   UPDATE_USER_ERROR,
+  HANDLE_CHANGE,
+  CLEAR_VALUES,
+  CREATE_RUN_BEGIN,
+  CREATE_RUN_SUCCESS,
+  CREATE_RUN_ERROR,
 } from "./actions";
 import { initialState } from "./appContext";
 
@@ -100,12 +105,60 @@ const reducer = (state, action) => {
   }
   /*************************************/
 
+  /************ CREATE RUN *************/
+  if (action.type === CREATE_RUN_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+    };
+  }
+  if (action.type === CREATE_RUN_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "success",
+      alertText: "Run Added Successfully!",
+    };
+  }
+  if (action.type === CREATE_RUN_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: "danger",
+      alertText: action.payload.msg,
+    };
+  }
+
+  /*************************************/
+
   /************ MISC FUNCTIONALITIES *************/
 
   if (action.type === TOGGLE_SIDEBAR) {
     return {
       ...state,
       showSidebar: !state.showSidebar,
+    };
+  }
+
+  if (action.type === HANDLE_CHANGE) {
+    return {
+      ...state,
+      [action.payload.name]: action.payload.value,
+    };
+  }
+  if (action.type === CLEAR_VALUES) {
+    const initialState = {
+      runTime: 0,
+      runDistance: 0,
+      stepsTaken: 0,
+      runRating: "adequate",
+      runNotes: "",
+    };
+    return {
+      ...state,
+      ...initialState,
     };
   }
 

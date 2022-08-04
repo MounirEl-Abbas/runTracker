@@ -4,11 +4,11 @@ import { BadRequestError } from "../errors/index.js";
 
 const createRun = async (req, res) => {
   const { runTime, runDistance } = req.body;
-  console.log(req.user);
   if (!runTime || !runDistance)
     throw new BadRequestError("Please provide all values!");
 
   req.body.createdBy = req.user.userId;
+
   const run = await Run.create(req.body);
 
   res.status(StatusCodes.CREATED).json({ run });

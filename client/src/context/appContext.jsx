@@ -12,6 +12,11 @@ import {
   UPDATE_USER_BEGIN,
   UPDATE_USER_SUCCESS,
   UPDATE_USER_ERROR,
+  HANDLE_CHANGE,
+  CLEAR_VALUES,
+  CREATE_RUN_BEGIN,
+  CREATE_RUN_SUCCESS,
+  CREATE_RUN_ERROR,
 } from "./actions";
 
 const token = localStorage.getItem("token");
@@ -25,6 +30,12 @@ export const initialState = {
   user: user ? JSON.parse(user) : null,
   token: token,
   showSidebar: false,
+  runTime: 0,
+  runDistance: 0,
+  stepsTaken: 0,
+  runNotes: "",
+  runRating: "adequate",
+  runRatingOptions: ["superb", "adequate", "poor"],
 };
 
 const AppContext = React.createContext();
@@ -137,6 +148,42 @@ const AppProvider = ({ children }) => {
     }
     clearAlert();
   };
+
+  const handleChange = ({ name, value }) => {
+    dispatch({
+      type: HANDLE_CHANGE,
+      payload: { name, value },
+    });
+  };
+  const clearValues = () => {
+    dispatch({ type: CLEAR_VALUES });
+  };
+
+  const createRun = async () => {
+    dispatch({ type: CREATE_RUN_BEGIN });
+
+    try {
+      const { runTime, runDistance, stepsTaken, runRating, runNotes } = state;
+
+      await authFetch.post("/runs", {
+        runTime,
+        runDistance,
+        stepsTaken,
+        runRating,
+        runNotes,
+      });
+      dispatch({ type: CREATE_RUN_SUCCESS });
+      dispatch({ type: CLEAR_VALUES });
+    } catch (error) {
+      if (error.response.status === 401) return;
+      dispatch({
+        type: CREATE_RUN_ERROR,
+        payload: { msg: error.response.data.msg },
+      });
+    }
+    clearAlert();
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -146,6 +193,9 @@ const AppProvider = ({ children }) => {
         logoutUser,
         toggleSidebar,
         updateUser,
+        handleChange,
+        clearValues,
+        createRun,
       }}>
       {children}
     </AppContext.Provider>
