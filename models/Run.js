@@ -44,12 +44,9 @@ const RunSchema = new mongoose.Schema(
 
 RunSchema.pre("save", async function () {
   //Calculate runPace and runSpeed, and take care of trailing 0s (e.g. 12.00 = 12)
-  this.runPace =
-    parseFloat((this.runTime / this.runDistance).toFixed(2)) +
-    ` minutes per km`;
+  this.runPace = parseFloat((this.runTime / this.runDistance).toFixed(2));
 
-  this.runSpeed =
-    parseFloat((this.runDistance / this.runTime).toFixed(2)) + ` km per minute`;
+  this.runSpeed = parseFloat((this.runDistance / this.runTime).toFixed(2));
 });
 
 export default mongoose.model("Run", RunSchema);

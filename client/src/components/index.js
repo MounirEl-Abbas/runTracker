@@ -5,7 +5,8 @@ import Navbar from "./Navbar";
 import BigSidebar from "./BigSidebar";
 import SmallSidebar from "./SmallSidebar";
 import FormRowSelect from "./FormRowSelect";
-
+import RunsContainer from "./RunsContainer";
+import FiltersContainer from "./FiltersContainer";
 export {
   Logo,
   FormRow,
@@ -14,4 +15,6 @@ export {
   BigSidebar,
   SmallSidebar,
   FormRowSelect,
+  RunsContainer,
+  FiltersContainer,
 };

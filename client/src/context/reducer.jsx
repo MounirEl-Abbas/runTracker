@@ -14,6 +14,8 @@ import {
   CREATE_RUN_BEGIN,
   CREATE_RUN_SUCCESS,
   CREATE_RUN_ERROR,
+  GET_RUNS_BEGIN,
+  GET_RUNS_SUCCESS,
 } from "./actions";
 import { initialState } from "./appContext";
 
@@ -133,6 +135,25 @@ const reducer = (state, action) => {
 
   /*************************************/
 
+  /************ GET ALL RUNS *************/
+  if (action.type === GET_RUNS_BEGIN) {
+    return {
+      ...state,
+      isLoading: true,
+      showAlert: false,
+    };
+  }
+  if (action.type === GET_RUNS_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      runs: action.payload.runs,
+      totalRuns: action.payload.totalRuns,
+      numOfPages: action.payload.numOfPages,
+    };
+  }
+  /*************************************/
+
   /************ MISC FUNCTIONALITIES *************/
 
   if (action.type === TOGGLE_SIDEBAR) {
@@ -155,6 +176,8 @@ const reducer = (state, action) => {
       stepsTaken: 0,
       runRating: "adequate",
       runNotes: "",
+      isEditing: false,
+      editJobId: "",
     };
     return {
       ...state,

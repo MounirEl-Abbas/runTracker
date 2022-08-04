@@ -14,7 +14,10 @@ const createRun = async (req, res) => {
   res.status(StatusCodes.CREATED).json({ run });
 };
 const getAllRuns = async (req, res) => {
-  res.send("getAll Run");
+  const runs = await Run.find({ createdBy: req.user.userId });
+  res
+    .status(StatusCodes.OK)
+    .json({ totalRuns: runs.length, numOfPages: 1, runs });
 };
 const updateRun = async (req, res) => {
   res.send("update Run");

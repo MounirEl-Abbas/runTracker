@@ -1,4 +1,10 @@
+import { RunsContainer, FiltersContainer } from "../../components";
 const AllRuns = () => {
-  return <div>AllRuns</div>;
+  return (
+    <>
+      <FiltersContainer />
+      <RunsContainer />
+    </>
+  );
 };
 export default AllRuns;

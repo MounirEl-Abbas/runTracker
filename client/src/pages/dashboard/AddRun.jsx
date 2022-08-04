@@ -16,6 +16,7 @@ const AddRun = () => {
     displayAlert,
     createRun,
     showAlert,
+    isEditing,
   } = useAppContext();
 
   const handleRunInput = e => {
@@ -30,13 +31,15 @@ const AddRun = () => {
       displayAlert();
       return;
     }
+    if (isEditing) return;
+
     createRun();
   };
 
   return (
     <Wrapper>
       <form className="form">
-        <h3>Add Run</h3>
+        <h3>{isEditing ? "Edit Run" : "Add Run"}</h3>
         {showAlert && <Alert />}
         <div className="form-center">
           {/* Run Time */}

@@ -17,6 +17,8 @@ import {
   CREATE_RUN_BEGIN,
   CREATE_RUN_SUCCESS,
   CREATE_RUN_ERROR,
+  GET_RUNS_BEGIN,
+  GET_RUNS_SUCCESS,
 } from "./actions";
 
 const token = localStorage.getItem("token");
@@ -36,6 +38,12 @@ export const initialState = {
   runNotes: "",
   runRating: "adequate",
   runRatingOptions: ["superb", "adequate", "poor"],
+  isEditing: false,
+  editJobId: "",
+  runs: [],
+  totalRuns: 0,
+  numOfPages: 1,
+  page: 1,
 };
 
 const AppContext = React.createContext();
@@ -184,6 +192,34 @@ const AppProvider = ({ children }) => {
     clearAlert();
   };
 
+  const getRuns = async () => {
+    dispatch({ type: GET_RUNS_BEGIN });
+
+    try {
+      const { data } = await authFetch.get("/runs");
+      const { runs, totalRuns, numOfPages } = data;
+      dispatch({
+        type: GET_RUNS_SUCCESS,
+        payload: {
+          runs,
+          totalRuns,
+          numOfPages,
+        },
+      });
+    } catch (error) {
+      console.log(error.response);
+      // logoutUser()
+    }
+    clearAlert();
+  };
+
+  const setEditRun = id => {
+    console.log(`set edit Run ${id}`);
+  };
+  const deleteRun = id => {
+    console.log(`delete run ${id}`);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -196,6 +232,9 @@ const AppProvider = ({ children }) => {
         handleChange,
         clearValues,
         createRun,
+        getRuns,
+        setEditRun,
+        deleteRun,
       }}>
       {children}
     </AppContext.Provider>

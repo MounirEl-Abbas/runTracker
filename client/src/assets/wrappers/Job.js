@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Wrapper = styled.article`
   background: var(--white);
@@ -41,17 +41,17 @@ const Wrapper = styled.article`
       letter-spacing: var(--letterSpacing);
     }
   }
-  .pending {
+  .superb {
     background: #fcefc7;
     color: #e9b949;
   }
-  .interview {
+  .adequate {
     background: #e0e8f9;
     color: #647acb;
   }
-  .declined {
+  .poor {
+    background: #fccece;
     color: #d66a6a;
-    background: #ffeeee;
   }
   .content {
     padding: 1rem 1.5rem;
@@ -100,6 +100,6 @@ const Wrapper = styled.article`
   &:hover .actions {
     visibility: visible;
   }
-`
+`;
 
-export default Wrapper
+export default Wrapper;
