@@ -52,6 +52,7 @@ export const initialState = {
   numOfPages: 1,
   page: 1,
   stats: {},
+  monthlyRuns: [],
 };
 
 const AppContext = React.createContext();
@@ -268,6 +269,7 @@ const AppProvider = ({ children }) => {
         type: SHOW_STATS_SUCCESS,
         payload: {
           stats: data.stats,
+          monthlyRuns: data.monthlyRuns,
         },
       });
     } catch (error) {

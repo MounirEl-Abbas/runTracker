@@ -224,6 +224,7 @@ const reducer = (state, action) => {
       ...state,
       isLoading: false,
       stats: action.payload.stats,
+      monthlyRuns: action.payload.monthlyRuns,
     };
   }
 

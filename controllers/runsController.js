@@ -2,6 +2,8 @@ import Run from "../models/Run.js";
 import { StatusCodes } from "http-status-codes";
 import { BadRequestError, NotFoundError } from "../errors/index.js";
 import checkPermissions from "../utils/checkPermissions.js";
+import mongoose from "mongoose";
+import moment from "moment";
 
 const createRun = async (req, res) => {
   const { runTime, runDistance } = req.body;
@@ -87,27 +89,38 @@ const showStats = async (req, res) => {
   stats.averageDistancePerRun =
     parseFloat(stats.totalDistanceRan / runs.length).toFixed(2) || 0;
 
-  // stats.totalStepsTaken = runs.reduce(function (acc, obj) {
-  //   return acc + obj.totalSteps;
-  // }, 0);
+  let monthlyRuns = await Run.aggregate([
+    { $match: { createdBy: mongoose.Types.ObjectId(req.user.userId) } },
+    {
+      $group: {
+        _id: {
+          year: { $year: "$createdAt" },
+          month: { $month: "$createdAt" },
+        },
+        count: { $sum: 1 },
+      },
+    },
+    { $sort: { "_id.year": -1, "_id.month": -1 } },
+    { $limit: 12 },
+  ]);
 
-  /* 
-  
-  CARD 1
-	> Total Runs logged
-	
-	CARD 2
-	> Total Distance run
+  console.log(monthlyRuns);
+  // prettify the result, to front-ends needs
+  monthlyRuns = monthlyRuns
+    .map(item => {
+      const {
+        _id: { year, month },
+        count,
+      } = item;
+      const date = moment()
+        .month(month - 1)
+        .year(year)
+        .format("MMM Y");
+      return { date, count };
+    })
+    .reverse();
 
-	CARD 3 (miscellaneous) 
-	> Total Calories burned
-	> Total Steps taken
-	> Average Pace
-	> Average Speed
-  
-  */
-
-  res.status(StatusCodes.OK).json({ stats });
+  res.status(StatusCodes.OK).json({ stats, monthlyRuns });
 };
 
 export { createRun, getAllRuns, deleteRun, updateRun, showStats };
