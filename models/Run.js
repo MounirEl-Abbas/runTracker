@@ -13,11 +13,11 @@ const RunSchema = new mongoose.Schema(
     },
     // runTime / runDistance = runPace
     runPace: {
-      type: String,
+      type: Number,
     },
     // runDistance / runTime = runSpeed
     runSpeed: {
-      type: String,
+      type: Number,
     },
     stepsTaken: {
       type: Number,

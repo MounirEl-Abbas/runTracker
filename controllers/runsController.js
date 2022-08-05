@@ -14,6 +14,7 @@ const createRun = async (req, res) => {
 
   res.status(StatusCodes.CREATED).json({ run });
 };
+
 const getAllRuns = async (req, res) => {
   const runs = await Run.find({ createdBy: req.user.userId });
   res
@@ -53,7 +54,60 @@ const deleteRun = async (req, res) => {
 };
 
 const showStats = async (req, res) => {
-  res.send("show stats Run");
+  const stats = {};
+
+  const runs = await Run.find({ createdBy: req.user.userId });
+
+  stats.totalRuns = runs.length;
+
+  stats.totalDistanceRan = runs.reduce(function (acc, obj) {
+    return acc + obj.runDistance;
+  }, 0);
+
+  //Get sum of all runPace, and divide by #ofRuns for runPace average
+  let sumOfRunPace = runs.reduce(function (acc, obj) {
+    return acc + obj.runPace;
+  }, 0);
+
+  //Get sum of all runSpeed, and divide by #ofRuns for runSpeed average
+  let sumOfRunSpeed = runs.reduce(function (acc, obj) {
+    return acc + obj.runSpeed;
+  }, 0);
+
+  stats.averageRunPace = Number(
+    parseFloat(sumOfRunPace / runs.length).toFixed(2)
+  );
+
+  stats.averageRunSpeed = Number(
+    parseFloat(sumOfRunSpeed / runs.length).toFixed(2)
+  );
+
+  stats.totalDistanceRan = parseFloat(stats.totalDistanceRan.toFixed(2));
+
+  stats.averageDistancePerRun =
+    parseFloat(stats.totalDistanceRan / runs.length).toFixed(2) || 0;
+
+  // stats.totalStepsTaken = runs.reduce(function (acc, obj) {
+  //   return acc + obj.totalSteps;
+  // }, 0);
+
+  /* 
+  
+  CARD 1
+	> Total Runs logged
+	
+	CARD 2
+	> Total Distance run
+
+	CARD 3 (miscellaneous) 
+	> Total Calories burned
+	> Total Steps taken
+	> Average Pace
+	> Average Speed
+  
+  */
+
+  res.status(StatusCodes.OK).json({ stats });
 };
 
 export { createRun, getAllRuns, deleteRun, updateRun, showStats };

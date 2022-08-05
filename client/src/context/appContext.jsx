@@ -24,6 +24,8 @@ import {
   EDIT_RUN_BEGIN,
   EDIT_RUN_SUCCESS,
   EDIT_RUN_ERROR,
+  SHOW_STATS_BEGIN,
+  SHOW_STATS_SUCCESS,
 } from "./actions";
 
 const token = localStorage.getItem("token");
@@ -49,6 +51,7 @@ export const initialState = {
   totalRuns: 0,
   numOfPages: 1,
   page: 1,
+  stats: {},
 };
 
 const AppContext = React.createContext();
@@ -257,6 +260,23 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const showStats = async () => {
+    dispatch({ type: SHOW_STATS_BEGIN });
+    try {
+      const { data } = await authFetch.get("/runs/stats");
+      dispatch({
+        type: SHOW_STATS_SUCCESS,
+        payload: {
+          stats: data.stats,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+      // logoutUser()
+    }
+    clearAlert();
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -273,6 +293,7 @@ const AppProvider = ({ children }) => {
         setEditRun,
         editRun,
         deleteRun,
+        showStats,
       }}>
       {children}
     </AppContext.Provider>
