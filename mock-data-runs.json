@@ -1,0 +1,677 @@
+[
+  {
+    "runTime": 96,
+    "runDistance": 43.1,
+    "createdAt": "2022-03-04T02:53:40Z",
+    "stepsTaken": 6639,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 126,
+    "runDistance": 33.4,
+    "createdAt": "2022-06-30T23:33:14Z",
+    "stepsTaken": 2105,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 46,
+    "runDistance": 40.7,
+    "createdAt": "2022-05-06T11:43:59Z",
+    "stepsTaken": 3398,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 35,
+    "runDistance": 10.3,
+    "createdAt": "2022-03-03T21:10:29Z",
+    "stepsTaken": 3135,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 226,
+    "runDistance": 38.0,
+    "createdAt": "2022-04-06T01:39:37Z",
+    "stepsTaken": 5284,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "example notes"
+  },
+  {
+    "runTime": 129,
+    "runDistance": 19.9,
+    "createdAt": "2022-07-21T18:10:02Z",
+    "stepsTaken": 4074,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 247,
+    "runDistance": 1.1,
+    "createdAt": "2021-12-31T01:55:56Z",
+    "stepsTaken": 1079,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes example"
+  },
+  {
+    "runTime": 217,
+    "runDistance": 38.0,
+    "createdAt": "2021-12-04T15:24:53Z",
+    "stepsTaken": 5584,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 152,
+    "runDistance": 27.6,
+    "createdAt": "2022-03-19T01:32:52Z",
+    "stepsTaken": 6930,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 202,
+    "runDistance": 25.2,
+    "createdAt": "2022-03-19T02:44:36Z",
+    "stepsTaken": 6324,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 30,
+    "runDistance": 45.4,
+    "createdAt": "2021-08-06T23:23:34Z",
+    "stepsTaken": 6889,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "example notes"
+  },
+  {
+    "runTime": 267,
+    "runDistance": 11.5,
+    "createdAt": "2022-07-31T18:15:53Z",
+    "stepsTaken": 1198,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 147,
+    "runDistance": 45.1,
+    "createdAt": "2021-09-14T09:26:36Z",
+    "stepsTaken": 6907,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 157,
+    "runDistance": 39.2,
+    "createdAt": "2022-03-21T22:51:28Z",
+    "stepsTaken": 6504,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 300,
+    "runDistance": 30.4,
+    "createdAt": "2022-04-24T07:20:05Z",
+    "stepsTaken": 7916,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes example"
+  },
+  {
+    "runTime": 64,
+    "runDistance": 9.9,
+    "createdAt": "2022-07-12T11:03:07Z",
+    "stepsTaken": 26,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 136,
+    "runDistance": 10.9,
+    "createdAt": "2022-03-15T03:02:24Z",
+    "stepsTaken": 544,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 74,
+    "runDistance": 22.1,
+    "createdAt": "2022-07-12T10:02:22Z",
+    "stepsTaken": 6789,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 288,
+    "runDistance": 2.6,
+    "createdAt": "2022-05-11T19:53:14Z",
+    "stepsTaken": 5288,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 124,
+    "runDistance": 45.2,
+    "createdAt": "2022-06-18T14:56:17Z",
+    "stepsTaken": 4085,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "example notes"
+  },
+  {
+    "runTime": 176,
+    "runDistance": 24.2,
+    "createdAt": "2022-05-09T01:06:26Z",
+    "stepsTaken": 6740,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 73,
+    "runDistance": 34.5,
+    "createdAt": "2022-07-10T18:18:34Z",
+    "stepsTaken": 7478,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes example"
+  },
+  {
+    "runTime": 259,
+    "runDistance": 43.3,
+    "createdAt": "2022-01-21T07:01:57Z",
+    "stepsTaken": 9165,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 105,
+    "runDistance": 44.4,
+    "createdAt": "2021-12-19T08:25:09Z",
+    "stepsTaken": 5260,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 131,
+    "runDistance": 19.7,
+    "createdAt": "2022-06-08T20:08:34Z",
+    "stepsTaken": 122,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "example notes"
+  },
+  {
+    "runTime": 198,
+    "runDistance": 15.4,
+    "createdAt": "2022-02-15T03:30:59Z",
+    "stepsTaken": 3735,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "example notes"
+  },
+  {
+    "runTime": 251,
+    "runDistance": 48.8,
+    "createdAt": "2022-04-21T00:31:20Z",
+    "stepsTaken": 234,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 119,
+    "runDistance": 40.5,
+    "createdAt": "2021-09-16T01:41:40Z",
+    "stepsTaken": 5745,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "example notes"
+  },
+  {
+    "runTime": 64,
+    "runDistance": 9.3,
+    "createdAt": "2021-12-26T17:56:13Z",
+    "stepsTaken": 1861,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 53,
+    "runDistance": 44.0,
+    "createdAt": "2022-06-22T03:50:05Z",
+    "stepsTaken": 6900,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 191,
+    "runDistance": 49.0,
+    "createdAt": "2021-09-08T14:44:55Z",
+    "stepsTaken": 3857,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 175,
+    "runDistance": 9.0,
+    "createdAt": "2021-09-12T06:29:13Z",
+    "stepsTaken": 7674,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes example"
+  },
+  {
+    "runTime": 230,
+    "runDistance": 16.8,
+    "createdAt": "2021-12-27T02:55:56Z",
+    "stepsTaken": 3099,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 153,
+    "runDistance": 19.4,
+    "createdAt": "2022-06-02T05:51:44Z",
+    "stepsTaken": 4500,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes example"
+  },
+  {
+    "runTime": 202,
+    "runDistance": 8.7,
+    "createdAt": "2021-11-27T12:26:17Z",
+    "stepsTaken": 5287,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes example"
+  },
+  {
+    "runTime": 273,
+    "runDistance": 42.8,
+    "createdAt": "2021-08-07T22:42:44Z",
+    "stepsTaken": 7983,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 154,
+    "runDistance": 40.5,
+    "createdAt": "2021-12-18T17:48:32Z",
+    "stepsTaken": 395,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 186,
+    "runDistance": 20.6,
+    "createdAt": "2022-01-07T13:06:44Z",
+    "stepsTaken": 914,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "example notes"
+  },
+  {
+    "runTime": 126,
+    "runDistance": 11.3,
+    "createdAt": "2021-09-30T10:39:46Z",
+    "stepsTaken": 1403,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "example notes"
+  },
+  {
+    "runTime": 246,
+    "runDistance": 40.3,
+    "createdAt": "2022-05-03T18:22:38Z",
+    "stepsTaken": 3762,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 81,
+    "runDistance": 16.6,
+    "createdAt": "2022-02-09T03:37:00Z",
+    "stepsTaken": 6456,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "example notes"
+  },
+  {
+    "runTime": 138,
+    "runDistance": 13.1,
+    "createdAt": "2021-12-01T04:54:39Z",
+    "stepsTaken": 2681,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 56,
+    "runDistance": 27.1,
+    "createdAt": "2022-02-26T03:11:03Z",
+    "stepsTaken": 4554,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 239,
+    "runDistance": 2.5,
+    "createdAt": "2021-11-21T10:14:44Z",
+    "stepsTaken": 2772,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 144,
+    "runDistance": 4.2,
+    "createdAt": "2021-09-13T16:48:50Z",
+    "stepsTaken": 2480,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 206,
+    "runDistance": 18.0,
+    "createdAt": "2022-01-11T03:41:38Z",
+    "stepsTaken": 9263,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 213,
+    "runDistance": 48.2,
+    "createdAt": "2021-10-24T16:46:44Z",
+    "stepsTaken": 1703,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 94,
+    "runDistance": 37.0,
+    "createdAt": "2022-05-29T09:00:42Z",
+    "stepsTaken": 2000,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 204,
+    "runDistance": 23.3,
+    "createdAt": "2021-10-05T10:16:47Z",
+    "stepsTaken": 1789,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "example notes"
+  },
+  {
+    "runTime": 101,
+    "runDistance": 10.9,
+    "createdAt": "2022-01-05T20:40:07Z",
+    "stepsTaken": 9937,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 192,
+    "runDistance": 20.0,
+    "createdAt": "2022-02-26T06:17:09Z",
+    "stepsTaken": 4769,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes example"
+  },
+  {
+    "runTime": 252,
+    "runDistance": 39.5,
+    "createdAt": "2022-07-31T04:54:47Z",
+    "stepsTaken": 394,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes example"
+  },
+  {
+    "runTime": 240,
+    "runDistance": 37.8,
+    "createdAt": "2022-01-23T23:52:02Z",
+    "stepsTaken": 4402,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 145,
+    "runDistance": 29.8,
+    "createdAt": "2021-08-11T03:20:19Z",
+    "stepsTaken": 5489,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 87,
+    "runDistance": 20.9,
+    "createdAt": "2022-02-09T19:47:25Z",
+    "stepsTaken": 3022,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes example"
+  },
+  {
+    "runTime": 44,
+    "runDistance": 49.6,
+    "createdAt": "2022-04-06T00:50:11Z",
+    "stepsTaken": 9895,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 227,
+    "runDistance": 24.3,
+    "createdAt": "2022-02-18T06:54:04Z",
+    "stepsTaken": 9201,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 157,
+    "runDistance": 33.3,
+    "createdAt": "2022-06-13T11:22:24Z",
+    "stepsTaken": 7453,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "example notes"
+  },
+  {
+    "runTime": 96,
+    "runDistance": 33.9,
+    "createdAt": "2022-05-13T08:50:52Z",
+    "stepsTaken": 9459,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 53,
+    "runDistance": 26.1,
+    "createdAt": "2022-02-08T13:47:58Z",
+    "stepsTaken": 4630,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 116,
+    "runDistance": 9.0,
+    "createdAt": "2022-06-14T10:27:27Z",
+    "stepsTaken": 1269,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 160,
+    "runDistance": 31.6,
+    "createdAt": "2022-05-21T14:33:52Z",
+    "stepsTaken": 6553,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes example"
+  },
+  {
+    "runTime": 57,
+    "runDistance": 21.4,
+    "createdAt": "2021-12-08T05:28:49Z",
+    "stepsTaken": 3882,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 211,
+    "runDistance": 13.8,
+    "createdAt": "2021-11-01T05:20:20Z",
+    "stepsTaken": 2727,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 101,
+    "runDistance": 20.4,
+    "createdAt": "2022-01-18T00:57:52Z",
+    "stepsTaken": 7504,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 289,
+    "runDistance": 4.6,
+    "createdAt": "2021-09-02T03:31:14Z",
+    "stepsTaken": 741,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 86,
+    "runDistance": 6.5,
+    "createdAt": "2021-11-15T09:09:07Z",
+    "stepsTaken": 5028,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 282,
+    "runDistance": 21.0,
+    "createdAt": "2021-12-19T01:27:47Z",
+    "stepsTaken": 3913,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "example notes"
+  },
+  {
+    "runTime": 128,
+    "runDistance": 18.8,
+    "createdAt": "2021-11-17T15:30:53Z",
+    "stepsTaken": 5854,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes example"
+  },
+  {
+    "runTime": 248,
+    "runDistance": 44.6,
+    "createdAt": "2021-10-20T11:25:36Z",
+    "stepsTaken": 6473,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 181,
+    "runDistance": 41.9,
+    "createdAt": "2022-07-17T16:57:04Z",
+    "stepsTaken": 3789,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 35,
+    "runDistance": 34.5,
+    "createdAt": "2022-07-20T01:11:17Z",
+    "stepsTaken": 9001,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 268,
+    "runDistance": 4.6,
+    "createdAt": "2021-09-02T23:40:32Z",
+    "stepsTaken": 2423,
+    "runRating": "poor",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": "notes test"
+  },
+  {
+    "runTime": 260,
+    "runDistance": 3.8,
+    "createdAt": "2022-04-28T00:02:23Z",
+    "stepsTaken": 7988,
+    "runRating": "superb",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  },
+  {
+    "runTime": 235,
+    "runDistance": 26.8,
+    "createdAt": "2021-08-13T03:10:14Z",
+    "stepsTaken": 6495,
+    "runRating": "adequate",
+    "createdBy": "62e7ed067b5527212a6f3d73",
+    "runNotes": ""
+  }
+]
