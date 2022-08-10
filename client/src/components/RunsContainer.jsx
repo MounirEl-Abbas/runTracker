@@ -5,11 +5,19 @@ import Loading from "./Loading";
 import Wrapper from "../assets/wrappers/JobsContainer";
 
 const RunsContainer = () => {
-  const { getRuns, runs, isLoading, page, totalRuns } = useAppContext();
+  const {
+    getRuns,
+    runs,
+    isLoading,
+    page,
+    totalRuns,
+    filterRunRating,
+    filterRunMetric,
+  } = useAppContext();
 
   useEffect(() => {
     getRuns();
-  }, []);
+  }, [filterRunRating, filterRunMetric]);
 
   if (isLoading) {
     return <Loading center />;

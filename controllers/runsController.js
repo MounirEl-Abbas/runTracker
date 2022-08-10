@@ -18,7 +18,42 @@ const createRun = async (req, res) => {
 };
 
 const getAllRuns = async (req, res) => {
-  const runs = await Run.find({ createdBy: req.user.userId });
+  const { filterRunMetric, filterRunRating } = req.query;
+
+  const queryObject = {
+    createdBy: req.user.userId,
+  };
+
+  if (filterRunRating !== "all") {
+    queryObject.runRating = filterRunRating;
+  }
+
+  let result = Run.find(queryObject);
+
+  //Sort by createdAt
+  if (filterRunMetric === "latest") {
+    result = result.sort("-createdAt");
+  }
+  if (filterRunMetric === "oldest") {
+    result = result.sort("createdAt");
+  }
+  //Sort by run metric
+  if (filterRunMetric === "longest duration") {
+    result = result.sort("-runTime");
+  }
+  if (filterRunMetric === "shortest duration") {
+    result = result.sort("runTime");
+  }
+  //Sort by runDistance
+  if (filterRunMetric === "furthest distance") {
+    result = result.sort("-runDistance");
+  }
+  if (filterRunMetric === "shortest distance") {
+    result = result.sort("runDistance");
+  }
+
+  const runs = await result;
+
   res
     .status(StatusCodes.OK)
     .json({ totalRuns: runs.length, numOfPages: 1, runs });
@@ -104,7 +139,6 @@ const showStats = async (req, res) => {
     { $limit: 12 },
   ]);
 
-  console.log(monthlyRuns);
   // prettify the result, to front-ends needs
   monthlyRuns = monthlyRuns
     .map(item => {

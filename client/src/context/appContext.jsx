@@ -26,6 +26,7 @@ import {
   EDIT_RUN_ERROR,
   SHOW_STATS_BEGIN,
   SHOW_STATS_SUCCESS,
+  CLEAR_FILTERS,
 } from "./actions";
 
 const token = localStorage.getItem("token");
@@ -53,6 +54,17 @@ export const initialState = {
   page: 1,
   stats: {},
   monthlyRuns: [],
+  filterRunRating: "all",
+  filterRunDuration: "",
+  filterRunOptions: [
+    "latest",
+    "oldest",
+    "longest duration",
+    "shortest duration",
+    "furthest distance",
+    "shortest distance",
+  ],
+  filterRunMetric: "latest",
 };
 
 const AppContext = React.createContext();
@@ -202,10 +214,14 @@ const AppProvider = ({ children }) => {
   };
 
   const getRuns = async () => {
+    const { filterRunRating, filterRunMetric } = state;
+
+    let url = `/runs?filterRunRating=${filterRunRating}&filterRunMetric=${filterRunMetric}`;
+
     dispatch({ type: GET_RUNS_BEGIN });
 
     try {
-      const { data } = await authFetch.get("/runs");
+      const { data } = await authFetch.get(url);
       const { runs, totalRuns, numOfPages } = data;
       dispatch({
         type: GET_RUNS_SUCCESS,
@@ -220,6 +236,9 @@ const AppProvider = ({ children }) => {
       // logoutUser()
     }
     clearAlert();
+  };
+  const clearFilters = () => {
+    dispatch({ type: CLEAR_FILTERS });
   };
 
   const setEditRun = runId => {
@@ -296,6 +315,7 @@ const AppProvider = ({ children }) => {
         editRun,
         deleteRun,
         showStats,
+        clearFilters,
       }}>
       {children}
     </AppContext.Provider>

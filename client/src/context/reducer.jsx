@@ -23,6 +23,7 @@ import {
   EDIT_RUN_ERROR,
   SHOW_STATS_BEGIN,
   SHOW_STATS_SUCCESS,
+  CLEAR_FILTERS,
 } from "./actions";
 import { initialState } from "./appContext";
 
@@ -258,6 +259,15 @@ const reducer = (state, action) => {
     return {
       ...state,
       ...initialState,
+    };
+  }
+  if (action.type === CLEAR_FILTERS) {
+    return {
+      ...state,
+      sort: "latest",
+      filterRunRating: "all",
+      filterRunDuration: "",
+      filterRunDistance: "",
     };
   }
 
