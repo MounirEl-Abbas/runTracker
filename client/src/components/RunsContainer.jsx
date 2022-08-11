@@ -3,21 +3,26 @@ import { useAppContext } from "../context/appContext";
 import Run from "./Run";
 import Loading from "./Loading";
 import Wrapper from "../assets/wrappers/JobsContainer";
+import PageBtnContainer from "./PageBtnContainer";
 
 const RunsContainer = () => {
   const {
     getRuns,
     runs,
     isLoading,
-    page,
     totalRuns,
     filterRunRating,
     filterRunMetric,
+    page,
+    numOfPages,
   } = useAppContext();
 
   useEffect(() => {
-    getRuns();
-  }, [filterRunRating, filterRunMetric]);
+    const delayForTyping = setTimeout(() => {
+      getRuns();
+    }, 700);
+    return () => clearTimeout(delayForTyping);
+  }, [filterRunRating, filterRunMetric, page]);
 
   if (isLoading) {
     return <Loading center />;
@@ -41,7 +46,7 @@ const RunsContainer = () => {
           <Run key={run._id} {...run} />
         ))}
       </div>
-      {/* Pagination buttons go here ... */}
+      {numOfPages > 1 && <PageBtnContainer />}
     </Wrapper>
   );
 };

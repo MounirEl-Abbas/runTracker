@@ -27,6 +27,7 @@ import {
   SHOW_STATS_BEGIN,
   SHOW_STATS_SUCCESS,
   CLEAR_FILTERS,
+  CHANGE_PAGE,
 } from "./actions";
 
 const token = localStorage.getItem("token");
@@ -214,9 +215,9 @@ const AppProvider = ({ children }) => {
   };
 
   const getRuns = async () => {
-    const { filterRunRating, filterRunMetric } = state;
+    const { filterRunRating, filterRunMetric, page } = state;
 
-    let url = `/runs?filterRunRating=${filterRunRating}&filterRunMetric=${filterRunMetric}`;
+    let url = `/runs?filterRunRating=${filterRunRating}&filterRunMetric=${filterRunMetric}&page=${page}`;
 
     dispatch({ type: GET_RUNS_BEGIN });
 
@@ -239,6 +240,9 @@ const AppProvider = ({ children }) => {
   };
   const clearFilters = () => {
     dispatch({ type: CLEAR_FILTERS });
+  };
+  const changePage = page => {
+    dispatch({ type: CHANGE_PAGE, payload: { page } });
   };
 
   const setEditRun = runId => {
@@ -316,6 +320,7 @@ const AppProvider = ({ children }) => {
         deleteRun,
         showStats,
         clearFilters,
+        changePage,
       }}>
       {children}
     </AppContext.Provider>
