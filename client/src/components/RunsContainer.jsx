@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useAppContext } from "../context/appContext";
 import Run from "./Run";
 import Loading from "./Loading";
-import Wrapper from "../assets/wrappers/JobsContainer";
+import styled from "styled-components";
 import PageBtnContainer from "./PageBtnContainer";
 
 const RunsContainer = () => {
@@ -51,3 +51,25 @@ const RunsContainer = () => {
   );
 };
 export default RunsContainer;
+
+const Wrapper = styled.section`
+  margin-top: 4rem;
+  h2 {
+    text-transform: none;
+  }
+  & > h5 {
+    font-weight: 700;
+  }
+  .jobs {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+  @media (min-width: 992px) {
+    .jobs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+`;

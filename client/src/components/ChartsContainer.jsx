@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAppContext } from "../context/appContext";
-import Wrapper from "../assets/wrappers/ChartsContainer";
+import styled from "styled-components";
 import BarChart from "./BarChart";
 import AreaChart from "./AreaChart";
 
@@ -18,3 +18,20 @@ const ChartsContainer = () => {
   );
 };
 export default ChartsContainer;
+
+const Wrapper = styled.section`
+  margin-top: 4rem;
+  text-align: center;
+  button {
+    background: transparent;
+    border-color: transparent;
+    text-transform: capitalize;
+    color: var(--primary-500);
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  h4 {
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+`;

@@ -1,4 +1,4 @@
-import Wrapper from "../assets/wrappers/StatsContainer";
+import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
 import { FaSuitcaseRolling, FaCalendarCheck, FaBug } from "react-icons/fa";
 import StatItem from "./StatItem";
@@ -39,3 +39,16 @@ const StatsContainer = () => {
   );
 };
 export default StatsContainer;
+
+const Wrapper = styled.section`
+  display: grid;
+  row-gap: 2rem;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+  @media (min-width: 1120px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+  }
+`;
