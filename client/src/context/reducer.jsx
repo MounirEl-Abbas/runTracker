@@ -266,10 +266,8 @@ const reducer = (state, action) => {
   if (action.type === CLEAR_FILTERS) {
     return {
       ...state,
-      sort: "latest",
       filterRunRating: "all",
-      filterRunDuration: "",
-      filterRunDistance: "",
+      filterRunMetric: "latest",
     };
   }
   if (action.type === CHANGE_PAGE) {

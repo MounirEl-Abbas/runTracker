@@ -56,7 +56,6 @@ export const initialState = {
   stats: {},
   monthlyRuns: [],
   filterRunRating: "all",
-  filterRunDuration: "",
   filterRunOptions: [
     "latest",
     "oldest",
