@@ -44,7 +44,6 @@ export const initialState = {
   runTime: 0,
   runDistance: 0,
   stepsTaken: 0,
-  runNotes: "",
   runRating: "adequate",
   runRatingOptions: ["superb", "adequate", "poor"],
   isEditing: false,
@@ -192,14 +191,13 @@ const AppProvider = ({ children }) => {
     dispatch({ type: CREATE_RUN_BEGIN });
 
     try {
-      const { runTime, runDistance, stepsTaken, runRating, runNotes } = state;
+      const { runTime, runDistance, stepsTaken, runRating } = state;
 
       await authFetch.post("/runs", {
         runTime,
         runDistance,
         stepsTaken,
         runRating,
-        runNotes,
       });
       dispatch({ type: CREATE_RUN_SUCCESS });
       dispatch({ type: CLEAR_VALUES });
@@ -252,13 +250,12 @@ const AppProvider = ({ children }) => {
     dispatch({ type: EDIT_RUN_BEGIN });
 
     try {
-      const { runTime, runDistance, stepsTaken, runRating, runNotes } = state;
+      const { runTime, runDistance, stepsTaken, runRating } = state;
       await authFetch.patch(`/runs/${state.editRunId}`, {
         runTime,
         runDistance,
         stepsTaken,
         runRating,
-        runNotes,
       });
       dispatch({ type: EDIT_RUN_SUCCESS });
       dispatch({ type: CLEAR_VALUES });

@@ -9,16 +9,15 @@ const Profile = () => {
 
   const [name, setName] = useState(user?.name);
   const [email, setEmail] = useState(user?.email);
-  const [lastName, setLastName] = useState(user?.lastName);
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (!name || !email || !lastName) {
+    if (!name || !email) {
       displayAlert();
       return;
     }
-    updateUser({ name, email, lastName });
+    updateUser({ name, email });
   };
 
   return (
@@ -33,13 +32,7 @@ const Profile = () => {
             value={name}
             handleChange={e => setName(e.target.value)}
           />
-          <FormRow
-            type="text"
-            name="lastName"
-            labelText="Last Name"
-            value={lastName}
-            handleChange={e => setLastName(e.target.value)}
-          />
+
           <FormRow
             type="email"
             name="email"

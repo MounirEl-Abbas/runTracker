@@ -173,7 +173,7 @@ const reducer = (state, action) => {
 
   if (action.type === SET_EDIT_RUN) {
     const run = state.runs.find(run => run._id === action.payload.runId);
-    const { _id, runTime, runDistance, stepsTaken, runRating, runNotes } = run;
+    const { _id, runTime, runDistance, stepsTaken, runRating } = run;
     return {
       ...state,
       isEditing: true,
@@ -182,7 +182,6 @@ const reducer = (state, action) => {
       runDistance,
       stepsTaken,
       runRating,
-      runNotes,
     };
   }
 
@@ -254,7 +253,7 @@ const reducer = (state, action) => {
       runDistance: 0,
       stepsTaken: 0,
       runRating: "adequate",
-      runNotes: "",
+
       isEditing: false,
       editJobId: "",
     };
