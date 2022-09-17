@@ -9,7 +9,7 @@ const AddRun = () => {
     runTime,
     runDistance,
     stepsTaken,
-    runNotes,
+
     runRating,
     runRatingOptions,
     clearValues,
@@ -79,19 +79,6 @@ const AddRun = () => {
             handleChange={handleRunInput}
             labelText="Overall Run"
           />
-          {/* run Notes */}
-          <div className="form-row">
-            <label htmlFor="runNotes" className="form-label">
-              Notes
-            </label>
-            <textarea
-              name="runNotes"
-              value={runNotes}
-              className="form-input"
-              maxLength="1000"
-              onChange={handleRunInput}
-              placeholder="1000 Characters Remaining"></textarea>
-          </div>
           {/* btn container */}
           <div className="btn-container">
             <button

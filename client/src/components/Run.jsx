@@ -1,18 +1,20 @@
 import moment from "moment";
-import { FaLocationArrow, FaCalendarAlt } from "react-icons/fa";
-import { IoFootstepsSharp } from "react-icons/io5";
-import { TbMessage } from "react-icons/tb";
 import styled from "styled-components";
+
 import { useAppContext } from "../context/appContext";
 import { Link } from "react-router-dom";
+//components
 import RunInfo from "./RunInfo";
-
+//icons
+import { FaCalendarAlt } from "react-icons/fa";
+import { IoFootstepsSharp } from "react-icons/io5";
+import { GiPathDistance } from "react-icons/gi";
+import { BiTimeFive } from "react-icons/bi";
 const Run = ({
   runTime,
   runDistance,
   runPace,
   runSpeed,
-  runNotes,
   runRating,
   stepsTaken,
   createdAt,
@@ -24,27 +26,21 @@ const Run = ({
     <Wrapper>
       <header>
         <div className="main-icon">
-          <FaLocationArrow />
-          {runDistance} km
+          <GiPathDistance />
+          <p>{runDistance} km</p>
         </div>
         <div className="info">
-          <h5>
-            Run Duration - {runTime} minute{runTime > 1 && "s"}
-          </h5>
           <p>Pace: {runPace} min/km</p>
           <p>Speed: {runSpeed} km/min</p>
         </div>
       </header>
       <div className="content">
         <div className="content-center">
+          <RunInfo icon={<BiTimeFive />} text={`${runTime} minutes`} />
+
           <RunInfo icon={<FaCalendarAlt />} text={date} />
-          <div className={`status ${runRating}`}>{runRating}</div>
           <RunInfo icon={<IoFootstepsSharp />} text={stepsTaken} />
-          {runNotes && (
-            <span className="icon">
-              <TbMessage />
-            </span>
-          )}
+          <div className={`status ${runRating}`}>{runRating}</div>
         </div>
         <footer>
           <div className="actions">
@@ -81,22 +77,33 @@ const Wrapper = styled.article`
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    h5 {
-      letter-spacing: 0;
-    }
   }
   .main-icon {
-    width: 60px;
-    height: 60px;
-    display: grid;
-    place-items: center;
+    width: 70px;
+    height: 70px;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
     background: var(--primary-500);
     border-radius: var(--borderRadius);
-    font-size: 1.5rem;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
     color: var(--white);
     margin-right: 2rem;
+    svg {
+      font-size: 4.5rem;
+      position: absolute;
+      color: var(--primary-700);
+    }
+    p {
+      width: 80px;
+      transform: rotateZ(-45deg);
+      letter-spacing: 1px;
+      text-align: center;
+    }
   }
   .info {
     h5 {
@@ -146,6 +153,8 @@ const Wrapper = styled.article`
     text-align: center;
     width: 100px;
     height: 30px;
+    align-self: center;
+    margin-top: 2px;
   }
   footer {
     margin-top: 1rem;
