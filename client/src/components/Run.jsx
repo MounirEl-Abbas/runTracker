@@ -65,7 +65,7 @@ const Run = ({
 export default Run;
 
 const Wrapper = styled.article`
-  background: var(--white);
+  background: var(--grey-dark);
   border-radius: var(--borderRadius);
   display: grid;
   grid-template-rows: 1fr auto;
@@ -91,7 +91,6 @@ const Wrapper = styled.article`
     font-size: 1.2rem;
     font-weight: 600;
     text-transform: capitalize;
-    color: var(--white);
     margin-right: 2rem;
     svg {
       font-size: 4.5rem;
@@ -101,7 +100,7 @@ const Wrapper = styled.article`
     p {
       width: 80px;
       transform: rotateZ(-45deg);
-      letter-spacing: 1px;
+      letter-spacing: var(--letterSpacing);
       text-align: center;
     }
   }
@@ -112,7 +111,7 @@ const Wrapper = styled.article`
     p {
       margin: 0;
       text-transform: capitalize;
-      color: var(--grey-400);
+      color: var(--grey-600);
       letter-spacing: var(--letterSpacing);
     }
   }

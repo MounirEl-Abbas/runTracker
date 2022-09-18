@@ -76,13 +76,13 @@ const Wrapper = styled.section`
   }
   .active {
     background: var(--primary-500);
-    color: var(--white);
+    color: var(--grey-dark);
   }
   .prev-btn,
   .next-btn {
     width: 100px;
     height: 40px;
-    background: var(--white);
+    background: var(--grey-dark);
     border-color: transparent;
     border-radius: var(--borderRadius);
     color: var(--primary-500);
@@ -98,6 +98,6 @@ const Wrapper = styled.section`
   .prev-btn:hover,
   .next-btn:hover {
     background: var(--primary-500);
-    color: var(--white);
+    color: var(--grey-dark);
   }
 `;

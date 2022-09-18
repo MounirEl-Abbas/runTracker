@@ -16,7 +16,7 @@ export default StatItem;
 
 const Wrapper = styled.article`
   padding: 2rem;
-  background: var(--white);
+  background: var(--grey-dark);
   border-radius: var(--borderRadius);
   border-bottom: 5px solid ${props => props.color};
   header {

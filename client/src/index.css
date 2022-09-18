@@ -25,19 +25,21 @@ html {
   --primary-900: #044e54;
 
   /* grey */
-  --grey-50: #f0f4f8;
-  --grey-100: #d9e2ec;
-  --grey-200: #bcccdc;
-  --grey-300: #9fb3c8;
-  --grey-400: #829ab1;
-  --grey-500: #627d98;
-  --grey-600: #486581;
-  --grey-700: #334e68;
-  --grey-800: #243b53;
-  --grey-900: #102a43;
+  --grey-50: #102a43;
+  --grey-100: #243b53;
+  --grey-200: #334e68;
+  --grey-300: #486581;
+  --grey-400: #627d98;
+  --grey-500: #829ab1;
+  --grey-600: #9fb3c8;
+  --grey-700: #bcccdc;
+  --grey-800: #d9e2ec;
+  --grey-900: #f0f4f8;
+
+ 
   /* rest of the colors */
   --black: #222;
-  --white: #fff;
+  --grey-dark: #2A2B2E;
   --red-light: #f8d7da;
   --red-dark: #842029;
   --green-light: #d1e7dd;
@@ -49,7 +51,7 @@ html {
   --small-text: 0.875rem;
   --extra-small-text: 0.7em;
   /* rest of the vars */
-  --backgroundColor: var(--grey-50);
+  --backgroundColor: #2A2B2E;
   --textColor: var(--grey-900);
   --borderRadius: 0.25rem;
   --letterSpacing: 1px;
@@ -70,7 +72,7 @@ html {
 }
 
 body {
-  background: var(--backgroundColor);
+  background: var(--black);
   font-family: var(--bodyFont);
   font-weight: 400;
   line-height: 1.75;
@@ -117,6 +119,12 @@ h5 {
   font-size: 1.25rem;
 }
 
+select,
+input {
+  color: var(--textColor);
+}
+
+
 small,
 .text-small {
   font-size: var(--small-text);
@@ -147,7 +155,7 @@ ul {
 
 .btn {
   cursor: pointer;
-  color: var(--white);
+  color: var(--grey-dark);
   background: var(--primary-500);
   border: transparent;
   border-radius: var(--borderRadius);
@@ -183,7 +191,7 @@ ul {
 }
 .btn-danger:hover {
   background: var(--red-dark);
-  color: var(--white);
+  color: var(--textColor);
 }
 /* alerts */
 .alert {
@@ -208,7 +216,7 @@ ul {
 .form {
   width: 90vw;
   max-width: var(--fixed-width);
-  background: var(--white);
+  background: var(--grey-dark);
   border-radius: var(--borderRadius);
   box-shadow: var(--shadow-2);
   padding: 2rem 2.5rem;

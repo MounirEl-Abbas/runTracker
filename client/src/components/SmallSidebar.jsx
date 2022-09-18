@@ -48,7 +48,7 @@ const Wrapper = styled.aside`
     opacity: 1;
   }
   .content {
-    background: var(--white);
+    background: var(--grey-dark);
     width: var(--fluid-width);
     height: 95vh;
     border-radius: var(--borderRadius);

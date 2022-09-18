@@ -67,7 +67,7 @@ const Wrapper = styled.nav`
     display: flex;
     align-items: center;
   }
-  background: var(--white);
+  background: var(--grey-dark);
   .btn-container {
     position: relative;
   }
