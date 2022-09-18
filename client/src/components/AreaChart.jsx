@@ -13,9 +13,9 @@ const AreaChart = ({ data }) => {
     <ResponsiveContainer width={"100%"} height={300}>
       <AChart data={data} margin={{ top: 50 }}>
         <CartesianGrid strokeDasharray="1 1 " />
-        <XAxis dataKey="date" />
-        <YAxis allowDecimals={false} />
-        <Tooltip />
+        <XAxis dataKey="date" stroke="#a1a1a5" />
+        <YAxis allowDecimals={false} stroke="#a1a1a5" />
+        <Tooltip wrapperStyle={{ color: "#2cb1bc" }} />
         <Area type="monotone" dataKey="count" stroke="#2cb1bc" fill="#bef8fd" />
       </AChart>
     </ResponsiveContainer>
