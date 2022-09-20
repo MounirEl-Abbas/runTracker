@@ -1,13 +1,19 @@
 {
-  "name": "udemy_jobify",
+  "name": "runTracker",
   "version": "1.0.0",
-  "description": "Project in Action - [Jobify](https://www.jobify.live/)",
+  "description": "Track your runs",
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "cd ./server node server",
     "server": "nodemon server --ignore client",
     "client": "cd ./client && npm start",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \" npm run client\""
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \" npm run client\"",
+    "build-client": "cd ./client && npm run build",
+    "install-client": "cd ./client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build-client",
+    "install-server": "npm-install",
+    "install-dependencies": "npm run install-client && npm run install server"
   },
   "keywords": [],
   "author": "",
@@ -27,5 +33,8 @@
   "devDependencies": {
     "concurrently": "^7.2.2",
     "nodemon": "^2.0.19"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }

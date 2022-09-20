@@ -231,7 +231,7 @@ const AppProvider = ({ children }) => {
       });
     } catch (error) {
       console.log(error.response);
-      // logoutUser()
+      logoutUser();
     }
     clearAlert();
   };
@@ -276,7 +276,7 @@ const AppProvider = ({ children }) => {
       getRuns();
     } catch (error) {
       console.log(error.response);
-      // logoutUser();
+      logoutUser();
     }
   };
 
@@ -293,7 +293,7 @@ const AppProvider = ({ children }) => {
       });
     } catch (error) {
       console.log(error);
-      // logoutUser()
+      logoutUser();
     }
     clearAlert();
   };
