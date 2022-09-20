@@ -44,7 +44,7 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/runs", authenticateUser, runsRouter);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
 });
 
 //error handling
