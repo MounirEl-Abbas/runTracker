@@ -27,7 +27,7 @@ const Wrapper = styled.article`
   .count {
     display: block;
     font-weight: 700;
-    font-size: 50px;
+    font-size: 40px;
     color: ${props => props.color};
   }
   .title {

@@ -1,21 +1,23 @@
 import styled from "styled-components";
 import { useAppContext } from "../context/appContext";
-import { FaSuitcaseRolling, FaCalendarCheck, FaBug } from "react-icons/fa";
+import { MdQueryStats } from "react-icons/md";
+import { GiJourney, GiNotebook } from "react-icons/gi";
 import StatItem from "./StatItem";
+
 const StatsContainer = () => {
   const { stats } = useAppContext();
   const defaultStats = [
     {
       title: "Total Runs Logged",
       count: stats.totalRuns || 0,
-      icon: <FaSuitcaseRolling />,
+      icon: <GiNotebook />,
       color: "#e9b949",
       bcg: "#fcefc7",
     },
     {
-      title: "Total Distance Ran",
-      count: (stats.totalDistanceRan || 0) + " Km",
-      icon: <FaCalendarCheck />,
+      title: "Total Distance Ran (km)",
+      count: stats.totalDistanceRan || 0,
+      icon: <GiJourney />,
       color: "#647acb",
       bcg: "#e0e8f9",
     },
@@ -24,7 +26,7 @@ const StatsContainer = () => {
       title1: "Run Pace: " + stats.averageRunPace + " min/km",
       title2: "Run Speed: " + stats.averageRunSpeed + " km/min",
       count: "Averages",
-      icon: <FaBug />,
+      icon: <MdQueryStats />,
       color: "#d66a6a",
       bcg: "#ffeeee",
     },
