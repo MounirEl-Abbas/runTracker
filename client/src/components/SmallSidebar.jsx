@@ -58,6 +58,9 @@ const Wrapper = styled.aside`
     align-items: center;
     flex-direction: column;
   }
+  .logo {
+    width: 200px;
+  }
   .close-btn {
     position: absolute;
     top: 10px;

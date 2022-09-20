@@ -26,6 +26,7 @@ export default BigSidebar;
 
 const Wrapper = styled.aside`
   display: none;
+
   @media (min-width: 992px) {
     display: block;
     box-shadow: 1px 0px 0px 0px rgba(0, 0, 0, 0.1);
@@ -40,6 +41,9 @@ const Wrapper = styled.aside`
     .content {
       position: sticky;
       top: 0;
+    }
+    .logo {
+      width: 200px;
     }
     .show-sidebar {
       margin-left: 0;

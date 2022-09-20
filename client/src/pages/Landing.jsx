@@ -13,7 +13,7 @@ const Landing = () => {
         {/* Info */}
         <div className="info">
           <h1>
-            job <span>tracking</span> app
+            run <span>tracking</span> app
           </h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
@@ -42,6 +42,9 @@ const Wrapper = styled.main`
     height: var(--nav-height);
     display: flex;
     align-items: center;
+    .logo {
+      width: 300px;
+    }
   }
   .page {
     min-height: calc(100vh - var(--nav-height));
