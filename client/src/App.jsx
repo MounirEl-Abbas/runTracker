@@ -1,3 +1,4 @@
+//to allow heroku access to client env
 import {} from "dotenv/config";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Landing, Register, Error, ProtectedRoute } from "./pages";
