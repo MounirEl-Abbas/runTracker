@@ -123,7 +123,6 @@ const AppProvider = ({ children }) => {
   };
 
   const setupUser = async ({ currentUser, endPoint, alertText }) => {
-    console.log(currentUser);
     dispatch({ type: SETUP_USER_BEGIN });
     try {
       const response = await axios.post(
