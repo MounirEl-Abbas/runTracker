@@ -108,29 +108,31 @@ const showStats = async (req, res) => {
   stats.totalDistanceRan = runs.reduce(function (acc, obj) {
     return acc + obj.runDistance;
   }, 0);
+  stats.totalDistanceRan = parseFloat(stats.totalDistanceRan.toFixed(2));
 
+  /* AVERAGES */
+
+  //Distance per run
+  stats.averageDistancePerRun = stats.totalDistanceRan / runs.length;
+  stats.averageDistancePerRun =
+    Number(parseFloat(stats.totalDistanceRan / runs.length).toFixed(2)) || 0;
+
+  //Run Pace
   //Get sum of all runPace, and divide by #ofRuns for runPace average
   let sumOfRunPace = runs.reduce(function (acc, obj) {
     return acc + obj.runPace;
   }, 0);
+  stats.averageRunPace =
+    Number(parseFloat(sumOfRunPace / runs.length).toFixed(2)) || 0;
 
+  //Run speed
   //Get sum of all runSpeed, and divide by #ofRuns for runSpeed average
   let sumOfRunSpeed = runs.reduce(function (acc, obj) {
     return acc + obj.runSpeed;
   }, 0);
 
-  stats.averageRunPace = Number(
-    parseFloat(sumOfRunPace / runs.length).toFixed(2)
-  );
-
-  stats.averageRunSpeed = Number(
-    parseFloat(sumOfRunSpeed / runs.length).toFixed(2)
-  );
-
-  stats.totalDistanceRan = parseFloat(stats.totalDistanceRan.toFixed(2));
-
-  stats.averageDistancePerRun =
-    parseFloat(stats.totalDistanceRan / runs.length).toFixed(2) || 0;
+  stats.averageRunSpeed =
+    Number(parseFloat(sumOfRunSpeed / runs.length).toFixed(2)) || 0;
 
   let monthlyRuns = await Run.aggregate([
     { $match: { createdBy: mongoose.Types.ObjectId(req.user.userId) } },

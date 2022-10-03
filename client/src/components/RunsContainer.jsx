@@ -18,10 +18,8 @@ const RunsContainer = () => {
   } = useAppContext();
 
   useEffect(() => {
-    const delayForTyping = setTimeout(() => {
-      getRuns();
-    }, 700);
-    return () => clearTimeout(delayForTyping);
+    getRuns();
+    //eslint-disable-next-line
   }, [filterRunRating, filterRunMetric, page]);
 
   if (isLoading) {

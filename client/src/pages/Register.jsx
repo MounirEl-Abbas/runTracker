@@ -8,6 +8,7 @@ const initialState = {
   email: "",
   password: "",
   isMember: true,
+  isGuest: false,
 };
 
 const Register = () => {
@@ -19,6 +20,9 @@ const Register = () => {
   const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember });
   };
+  const toggleGuest = () => {
+    setValues({ ...values, isGuest: !values.isGuest });
+  };
 
   const handleChange = e => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -26,25 +30,39 @@ const Register = () => {
 
   const onSubmit = e => {
     e.preventDefault();
-    const { name, email, password, isMember } = values;
-    if (!email || !password || (!isMember && !name)) {
-      displayAlert();
-      return;
-    }
-    const currentUser = { name, email, password };
+    const { name, email, password, isMember, isGuest } = values;
 
-    if (isMember) {
+    if (isGuest) {
+      const currentUser = {
+        name: "Guest",
+        email: "guest@example.com",
+        password: process.env.REACT_APP_GUEST_PASSWORD,
+      };
       setupUser({
         currentUser,
         endPoint: "login",
-        alertText: "Login Successful! Redirecting...",
+        alertText: "Proceeding as Guest...",
       });
     } else {
-      setupUser({
-        currentUser,
-        endPoint: "register",
-        alertText: "Register Successful! Redirecting...",
-      });
+      if (!email || !password || (!isMember && !name)) {
+        displayAlert();
+        return;
+      }
+      const currentUser = { name, email, password };
+
+      if (isMember) {
+        setupUser({
+          currentUser,
+          endPoint: "login",
+          alertText: "Login Successful! Redirecting...",
+        });
+      } else {
+        setupUser({
+          currentUser,
+          endPoint: "register",
+          alertText: "Register Successful! Redirecting...",
+        });
+      }
     }
   };
 
@@ -93,6 +111,15 @@ const Register = () => {
           <button type="button" onClick={toggleMember} className="member-btn">
             {values.isMember ? "Register" : "Login"}
           </button>
+          <span>
+            or
+            <button
+              onClick={toggleGuest}
+              className="guest-btn"
+              disabled={isLoading}>
+              Continue as Guest
+            </button>
+          </span>
         </p>
       </form>
     </Wrapper>
@@ -122,10 +149,14 @@ const Wrapper = styled.section`
     margin-top: 1rem;
     text-align: center;
   }
+  span {
+    display: block;
+  }
   .btn {
     margin-top: 1rem;
   }
-  .member-btn {
+  .member-btn,
+  .guest-btn {
     background: transparent;
     border: transparent;
     color: var(--primary-500);
