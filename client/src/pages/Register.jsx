@@ -36,7 +36,7 @@ const Register = () => {
       const currentUser = {
         name: "Guest",
         email: "guest@example.com",
-        password: process.env.GUEST_PASSWORD,
+        password: process.env.REACT_APP_GUEST_PASSWORD,
       };
       setupUser({
         currentUser,

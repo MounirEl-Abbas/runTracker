@@ -1,3 +1,4 @@
+import {} from "dotenv/config";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Landing, Register, Error, ProtectedRoute } from "./pages";
 import {
